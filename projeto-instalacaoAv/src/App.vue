@@ -2,16 +2,19 @@
   <div>
     <PrimeiroComponente/>
     <p>{{ teste }}</p>
+    <LifeCicleStyle />
   </div>
 </template>
 
 <script>
   import PrimeiroComponente from './components/PrimeiroComponente.vue'
+  import LifeCicleStyle from './components/LifeStyle.vue'
 
   export default {
     name: 'App',
     components: {
-      PrimeiroComponente
+      PrimeiroComponente,
+      LifeCicleStyle
     },
 
     data(){
