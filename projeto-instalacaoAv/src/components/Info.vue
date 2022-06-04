@@ -11,7 +11,8 @@
       <li>{{tecnologia5}}</li>
     </ul>
     <p v-show="teste_show">Testando o v-show (parecido com o if só que não tem o else)</p>
-    <p>Clique aqui para ir para o <a v-bind:href="meu_link" target="_blank">link do google</a></p>
+    <button @click="botao">{{nome_botao}}</button>
+    <p v-show="link_botao">Clique aqui para ir para o <a v-bind:href="meu_link" target="_blank">link do google</a></p>
     <Picture/>
 
   </div>
@@ -36,7 +37,20 @@
         tecnologia5: 'CSS',
         status_trabalho: true,
         teste_show: true,
-        meu_link: 'https://www.google.com.br/'
+        meu_link: 'https://www.google.com.br/',
+        link_botao: true,
+        nome_botao: 'Clique para desativar'
+      }
+    },
+
+    methods:{
+      botao(){
+        this.link_botao = !this.link_botao
+        if(this.link_botao == true){
+          this.nome_botao = 'Clique para desativar'
+        }else{
+          this.nome_botao = 'Clique para ativar'
+        }
       }
     }
   }
