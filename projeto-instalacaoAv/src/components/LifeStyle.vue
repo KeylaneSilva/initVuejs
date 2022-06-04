@@ -1,6 +1,5 @@
 <template>
   <div>
-    <hr>
     <h1>Ciclo de vida Hooks</h1>
     <h2>O nome é: {{ nome }}</h2>
     <h2>O nome é: {{ cont }}</h2>
@@ -8,7 +7,6 @@
 </template>
 
 <script>
-import { onBeforeUpdate } from 'vue'
 
   export default{
     name: 'LifeCicleStyle',
