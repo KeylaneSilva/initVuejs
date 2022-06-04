@@ -10,14 +10,22 @@
       <li>{{tecnologia4}}</li>
       <li>{{tecnologia5}}</li>
     </ul>
-
     <p v-show="teste_show">Testando o v-show (parecido com o if só que não tem o else)</p>
+    <p>Clique aqui para ir para o <a v-bind:href="meu_link" target="_blank">link do google</a></p>
+    <Picture/>
+
   </div>
 </template>
 
 <script>
+  import Picture from './Picture.vue'
+
   export default{
     name: 'Info',
+
+    components: {
+      Picture
+    },
 
     data(){
       return{
@@ -27,7 +35,8 @@
         tecnologia4: 'HTML',
         tecnologia5: 'CSS',
         status_trabalho: true,
-        teste_show: true
+        teste_show: true,
+        meu_link: 'https://www.google.com.br/'
       }
     }
   }
