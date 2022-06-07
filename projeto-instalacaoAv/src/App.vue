@@ -25,7 +25,7 @@
       LifeCicleStyle,
       Linha,
       Pessoa,
-      Header
+      Header,
     },
 
     data(){
