@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header/>
     <PrimeiroComponente/>
     <p>{{ teste }}</p>
     <Linha/>
@@ -10,6 +11,7 @@
 </template>
 
 <script>
+  import Header from './components/Header.vue'
   import PrimeiroComponente from './components/PrimeiroComponente.vue'
   import LifeCicleStyle from './components/LifeStyle.vue'
   import Linha from './components/Linha.vue'
@@ -17,11 +19,13 @@
 
   export default {
     name: 'App',
+
     components: {
       PrimeiroComponente,
       LifeCicleStyle,
       Linha,
-      Pessoa
+      Pessoa,
+      Header
     },
 
     data(){
@@ -31,3 +35,13 @@
     }
   }
 </script>
+
+<style>
+  body{
+    background: rgb(241, 239, 239);
+  }
+
+  a{
+    color: red;
+  }
+</style>
