@@ -1,20 +1,20 @@
 <template>
   <div>
     <div>
-      <form>
+      <form action="" @submit="EnviarDados">
         <div>
-          <input type="text" v-model="nome_1" placeholder="digite alguma coisa">
+          <input type="text" v-model="nUsuario" placeholder="digite alguma coisa">
         </div>
         <div>
-          <input type="text" v-model="nome_2" placeholder="digite alguma coisa">
+          <input type="text" v-model="nEmail" placeholder="digite alguma coisa">
         </div>
         <InputSubmit/>
       </form>
     </div>
     <div>
       <h3>Informações Digitadas</h3>
-      <p>Informação 1: {{nome_1}}</p>
-      <p>Informação 2: {{nome_2}}</p>
+      <p>Informação 1: {{nUsuario}}</p>
+      <p>Informação 2: {{nEmail}}</p>
     </div>
   </div>
 
@@ -32,8 +32,16 @@
 
     data(){
       return{
-        nome_1: '',
-        nome_2: ''
+        nUsuario: '',
+        nEmail: ''
+      }
+    },
+    methods: {
+      EnviarDados(e){
+        console.log('Nome:' + this.nUsuario)
+        console.log('Email:' + this.nEmail)
+
+        e.preventDefault()
       }
     }
   }

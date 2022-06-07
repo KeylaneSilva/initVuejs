@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="submit" value="Enviar" @click="Enviar">
+    <input type="submit" value="Enviar">
   </div>
 </template>
 
