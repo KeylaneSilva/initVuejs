@@ -2,13 +2,17 @@
   <div>
     <p v-if="status_trabalho">Estou trabalhando e estudando no momento</p>
     <p v-else>Não estou trabalhando e nem estudando no momento</p>
-    <p>Algumas das tecnologias</p>
+    <p>Algumas das tecnologias front-end</p>
     <ul>
-      <li>{{tecnologia1}}</li>
-      <li>{{tecnologia2}}</li>
-      <li>{{tecnologia3}}</li>
-      <li>{{tecnologia4}}</li>
-      <li>{{tecnologia5}}</li>
+      <li v-for="(tecnologias, index) in tec_front" v-bind:key="index" >
+        {{tecnologias}}
+      </li>
+    </ul>
+    <p>Algumas tecnologias back-end</p>
+    <ul>
+      <li v-for="tecnologias in tec_back" :key="tecnologias.id">
+        {{tecnologias.linguagem}}
+      </li>
     </ul>
     <p v-show="teste_show">Testando o v-show (parecido com o if só que não tem o else)</p>
     <button @click="botao">{{nome_botao}}</button>
@@ -39,7 +43,14 @@
         teste_show: true,
         meu_link: 'https://www.google.com.br/',
         link_botao: true,
-        nome_botao: 'Clique para desativar'
+        nome_botao: 'Clique para desativar',
+        tec_front: ['HTML', 'CSS', 'Javascript', 'Vue'],
+        tec_back: [
+          {id:1, linguagem:'Node'},
+          {id:2, linguagem:'JavaScript'},
+          {id:3, linguagem:'Express'},
+          {id:4, linguagem:'Mongo'}
+        ]
       }
     },
 
