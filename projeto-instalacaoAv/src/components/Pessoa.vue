@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1>Meu nome é {{ nome }}</h1>
-    <Info/>
+    <!-- passando por props -->
+    <Info :email="email" :status_trabalho="status_trabalho"/>
     <Form/>
   </div>
 </template>
@@ -20,7 +21,9 @@
 
     data(){
       return{
-        nome: 'Keylane'
+        nome: 'Keylane',
+        email: 'keylane@gmail.com',
+        status_trabalho: true
       }
     }
   }
