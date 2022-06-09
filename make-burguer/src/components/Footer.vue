@@ -21,7 +21,7 @@
     align-items: center; /* alinha na vertical */
     justify-content: center; /* alinha na horizontal */
     width: 100%;
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
 
   }
