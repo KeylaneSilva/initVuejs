@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>uma mensagem aqui</p>
+    <p>Componente de mensagem</p>
     <div>
       <form action="" id="burger-form">
         <div class="input-container">
@@ -10,27 +10,25 @@
 
         <div class="input-container">
           <label for="pao">Escolha o seu pão:</label>
-          <select name="pao" id="pao">
-            <option value="">Escolha o seu pão</option>
-            <option value="">Pão de Batata</option>
-            <option value="">Pão de Queijo</option>
+          <select name="pao" id="pao" v-model="pao">
+            <option value="Selecione o seu pão" selected>Selecione o seu pão</option>
+            <option v-for="pao in paes" :key="pao.id" :value="pao.tipo">{{pao.tipo}}</option>
           </select>
         </div>
 
         <div class="input-container">
           <label for="carne">Escolha o sua carne:</label>
-          <select name="carne" id="carne">
-            <option value="">Escolha a carne do seu burguer</option>
-            <option value="">Maminha</option>
-            <option value="">Vegana</option>
+          <select name="carne" id="carne" v-model="carne">
+            <option value="valor">Escolha a carne do seu burguer</option>
+            <option v-for="carne in carnes" :key="carne.id"  value="carne.tipo">{{carne.tipo}}</option>
           </select>
         </div>
 
         <div id="opcionais-container" class="input-container">
           <label for="opcionais" id="opcionais-title">Selecione seus opcionais:</label>
-          <div class="checkbox-container">
-            <input type="checkbox" name="opcionais" v-model="opcionais" value="Salame">
-            <span>Salame</span>
+          <div class="checkbox-container" v-for="opcional in opcionaisdata" :key="opcional.id">
+            <input type="checkbox" name="opcionais" v-model="opcionais" value="opcional.tipo">
+            <span>{{opcional.tipo}}</span>
           </div>
         </div>
 
@@ -45,7 +43,35 @@
 
 <script>
   export default{
-    name: 'BurguerForm'
+    name: 'BurguerForm',
+    data(){
+      return{
+        paes: null,
+        carnes: null,
+        opcionaisdata: null,
+        nome: null,
+        carne: null,
+        opcionais: [],
+        status: "Solicitado",
+        msg: null
+      }
+    },
+
+    methods:{
+      async getIngredientes(){
+        // fazendo requisição no back
+        const req = await fetch("http://localhost:3000/ingredientes")
+        const data = await req.json();
+
+        this.paes = data.paes
+        this.carnes = data.carnes
+        this.opcionaisdata = data.opcionais
+      }
+    },
+
+    mounted(){
+      this.getIngredientes()
+    }
   }
 </script>
 
