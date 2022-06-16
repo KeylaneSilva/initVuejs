@@ -65,8 +65,8 @@
     },
 
     methods:{
+      // fazendo requisição no back para resgatar os dados
       async getIngredientes(){
-        // fazendo requisição no back para resgatar os dados
         const req = await fetch("http://localhost:3000/ingredientes")
         const data = await req.json();
 
@@ -75,8 +75,8 @@
         this.opcionaisdata = data.opcionais
       },
 
+      // salvando no localStorange
       async createBurger(e){
-        // salvando no localStorange
         e.preventDefault()
 
         const data = {
@@ -89,6 +89,7 @@
 
         const dataJson = JSON.stringify(data)
 
+        // inserindo no banco
         const req = await fetch("http://localhost:3000/burgers", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -126,7 +127,6 @@
     max-width: 400px;
     margin: 0 auto; /* centraliza o conteudo0 */
   }
-
   .input-container{
     display: flex;
     flex-direction: column;
