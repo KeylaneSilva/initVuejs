@@ -24,7 +24,7 @@
         <div>
           <select name="status" class="status">
             <option value="">Selecione</option>
-            <option v-for="statu in status" :key="statu.id" value="">
+            <option v-for="statu in status" :key="statu.id" :selected="burger.status == statu.tipo" value="">
               {{statu.tipo}}
             </option>
           </select>
