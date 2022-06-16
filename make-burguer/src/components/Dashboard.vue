@@ -24,6 +24,9 @@
         <div>
           <select name="status" class="status">
             <option value="">Selecione</option>
+            <option v-for="statu in status" :key="statu.id" value="">
+              {{statu.tipo}}
+            </option>
           </select>
           <button class="delete-btn">Cancelar</button>
         </div>
@@ -52,7 +55,13 @@
         this.burgers = data;
         console.log(this.burgers)
 
-        // resgatando status
+        // resgatando status - refatorar para pegar 
+        const req2 = await fetch("http://localhost:3000/status")
+        const data2 = await req2.json()
+
+        this.status = data2
+        console.log(this.status)
+
       }
     },
 
@@ -64,7 +73,7 @@
 
 <style scoped>
   #burger-table{
-    max-width: 1200px;
+    max-width: 1250px;
     margin: 0 auto;
   }
   #burger-table-heading,
