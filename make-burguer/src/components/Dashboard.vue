@@ -73,7 +73,6 @@
         });
 
         const res = await req.json()
-
         this.getBurgers()
       }
 
