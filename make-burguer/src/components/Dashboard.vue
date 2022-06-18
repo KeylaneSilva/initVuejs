@@ -1,5 +1,6 @@
 <template>
   <div id="burger-table">
+    <Message :msg="msg" v-show="msg"/>
     <div>
       <div id="burger-table-heading">
         <div class="order-id">#:</div>
@@ -22,9 +23,9 @@
           </ul>
         </div>
         <div>
-          <select name="status" class="status">
+          <select name="status" class="status" @change="updateBurger($event, burger.id)">
             <option value="">Selecione</option>
-            <option v-for="statu in status" :key="statu.id" :selected="burger.status == statu.tipo" value="">
+            <option v-for="statu in status" :key="statu.id" :selected="burger.status == statu.tipo" :value="statu.tipo">
               {{statu.tipo}}
             </option>
           </select>
@@ -36,14 +37,21 @@
 </template>
 
 <script>
+  import Message from './Message.vue'
+
   export default{
     name: 'Dashboard',
+
+    components:{
+      Message
+    },
 
     data(){
       return{
         burgers: null,
         burger_id: null,
-        status: []
+        status: [],
+        msg: null
       }
     },
 
@@ -72,8 +80,29 @@
           method: "DELETE"
         });
 
+
         const res = await req.json()
+        this.msg = `Pedido ${burgerId} deletado com sucesso!`
+        setTimeout(() => this.msg = "", 3000)
         this.getBurgers()
+      },
+
+      async updateBurger(event, id){
+        const option = event.target.value;
+        const dataJson = JSON.stringify({status: option})
+
+        const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: dataJson
+        });
+
+
+        const res = await req.json()
+        this.msg = `Pedido ${id} atualizado para ${option} com sucesso!`
+        setTimeout(() => this.msg = "", 3000)
+
+        console.log(res)
       }
 
     },
