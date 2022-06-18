@@ -11,7 +11,7 @@
         <div class="input-container">
           <label for="pao">Escolha o seu pão:</label>
           <select name="pao" id="pao" v-model="pao">
-            <option value="Selecione o seu pão" selected>Selecione o seu pão</option>
+            <option value="" :selected="true">Selecione o seu pão</option>
             <option v-for="pao in paes" :key="pao.id" :value="pao.tipo">{{pao.tipo}}</option>
           </select>
         </div>
@@ -86,6 +86,7 @@
           opcionais : Array.from(this.opcionais),
           status: "Solicitado"
         }
+
 
         const dataJson = JSON.stringify(data)
 

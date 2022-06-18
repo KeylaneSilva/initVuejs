@@ -137,6 +137,20 @@
       ],
       "status": "Solicitado",
       "id": 5
+    },
+    {
+      "nome": "Rosa Elvas de Sá",
+      "carne": "Alcatra",
+      "pao": "Parmesão e Orégano",
+      "opcionais": [
+        "Bacon",
+        "Salame",
+        "Cheddar",
+        "Tomate",
+        "Cebola roxa"
+      ],
+      "status": "Solicitado",
+      "id": 10
     }
   ]
 }
