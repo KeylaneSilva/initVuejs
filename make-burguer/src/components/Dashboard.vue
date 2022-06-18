@@ -83,7 +83,7 @@
 
         const res = await req.json()
         this.msg = `Pedido ${burgerId} deletado com sucesso!`
-        setTimeout(() => this.msg = "", 3000)
+        setTimeout(() => this.msg = "", 5000)
         this.getBurgers()
       },
 
@@ -100,7 +100,7 @@
 
         const res = await req.json()
         this.msg = `Pedido ${id} atualizado para ${option} com sucesso!`
-        setTimeout(() => this.msg = "", 3000)
+        setTimeout(() => this.msg = "", 5000)
 
         console.log(res)
       }

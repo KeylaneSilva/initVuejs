@@ -79,14 +79,41 @@
   ],
   "burgers": [
     {
-      "nome": "trt",
-      "carne": "Maminha",
-      "pao": "Italiano Branco",
+      "nome": "Keylane da Silva Elvas de Sá",
+      "carne": "Picanha",
+      "pao": "Parmesão e Orégano",
       "opcionais": [
-        "Bacon"
+        "Bacon",
+        "Cheddar"
       ],
       "status": "Solicitado",
       "id": 1
+    },
+    {
+      "nome": "Weslley Sá",
+      "carne": "Maminha",
+      "pao": "3 Queijos",
+      "opcionais": [
+        "Bacon",
+        "Tomate",
+        "Cheddar",
+        "Cebola roxa"
+      ],
+      "status": "Finalizado",
+      "id": 2
+    },
+    {
+      "nome": "Ricardo Venção",
+      "carne": "Picanha",
+      "pao": "3 Queijos",
+      "opcionais": [
+        "Bacon",
+        "Cheddar",
+        "Tomate",
+        "Cebola roxa"
+      ],
+      "status": "Solicitado",
+      "id": 3
     }
   ]
 }
