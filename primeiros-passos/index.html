@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CDN -->
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="src/app.js" defer></script>
+  <title>Documentação - Vue</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- Contador -->
+    <p>Contador: {{ contador }}</p>
+    <hr>
+
+    <!-- Mensagem - titulo -->
+    <span v-bind:title="mensagem">
+      Para o mouse sobre mim e veja a mágica
+    </span>
+    <hr>
+
+    <!-- Inverter Mensagem -->
+    <p>{{ mensagem2 }}</p>
+    <button @click="reverterMensagem">Inverter Mensagem</button>
+    <hr>
+
+    <!-- V-model -->
+    <p>{{ texto }}</p>
+    <input type="text" v-model="texto">
+
+    <!-- V-if -->
+    <p v-if="visivel">Estou visivel</p>
+
+    <!-- V-for -->
+    <ol>
+      <li v-for="todo in todos">
+        {{ todo.text }}
+      </li>
+    </ol>
+  </div>
+</body>
+</html>

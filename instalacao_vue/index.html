@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CDN -->
   <script src="https://unpkg.com/vue@3"></script>
   <script src="src/app.js" defer></script>
-  <title>Hello Vue</title>
+  <title>Primeiro projeto com Vue</title>
 </head>
+
 <body>
   <div id="app">
     <form id="form-app">
@@ -16,6 +18,15 @@
     </form>
     <p>Meu nome é {{ nome }}</p>
     <p>Data binding: {{ input_name }}</p>
+
+    <hr>
+    <form id="form-app2">
+      <input type="text" name="" v-model="tratante" id="" placeholder="Digite o nome">
+      <input type="submit" value="Mande agora" @click="enviarFormulario">
+      <p>Data binding 2: {{ tratante }}</p>
+      <p>Catar coquinho: {{ nome2 }}</p>
+      <p>Idade:  {{ idade }}</p>
+    </form>
   </div>
 </body>
 </html>

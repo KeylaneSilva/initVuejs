@@ -62,7 +62,6 @@
 
         this.burgers = data;
         console.log('Hamburgues aqui' + this.burgers)
-
       },
       // resgatando status - refatorar para pegar
       async getStatus(){
@@ -71,7 +70,6 @@
 
         this.status = data
         console.log('Status aqui '+this.status)
-
       },
 
       async deletePedido(burgerId){
@@ -96,7 +94,6 @@
           headers: { "Content-Type": "application/json" },
           body: dataJson
         });
-
 
         const res = await req.json()
         this.msg = `Pedido ${id} atualizado para ${option} com sucesso!`

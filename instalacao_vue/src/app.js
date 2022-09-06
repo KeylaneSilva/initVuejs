@@ -3,7 +3,9 @@ const MyNameApp = {
     return {
       nome: "",
       idade: 22,
-      input_name: ""
+      input_name: "",
+      tratante: "",
+      nome2: " "
     }
   },
 
@@ -13,6 +15,10 @@ const MyNameApp = {
       this.nome = this.input_name
 
       // console.log(this.input_name)
+    },
+    enviarFormulario(e){
+      e.preventDefault();
+      this.nome2 = this.tratante
     }
   }
 }
